@@ -1,0 +1,61 @@
+﻿@model List<ResultCategoryDto>
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4>Kategori Tablosu</h4>
+                        <p class="text-muted m-b-15 f-s-12">Kategori durumunu değiştirmek isterseniz <code>Aktif/Pasif</code> yazısına tıklamanız yeterlidir.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Kategori Adı</th>
+                                    <th>Kategori Görseli</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.CategoryId</th>
+                                        <td>@item.CategoryName</td>
+                                        <td><img src="@item.ImageUrl" style="height:50px; width:50px; border-radius:15px;" /></td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td>
+                                                <a href="/Category/ChangeToFalse/@item.CategoryId"><span class="badge badge-success px-2">Aktif</span></a>
+
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a href="/Category/ChangeToTrue/@item.CategoryId"><span class="badge badge-warning px-2">pasif</span></a>
+
+                                            </td>
+                                        }
+
+                                        <td><a href="/Category/UpdateCategory/@item.CategoryId" class="badge badge-primary px-2">Güncelle</a></td>
+                                        <td><a href="/Category/DeleteCategory/@item.CategoryId" class="badge badge-danger px-2">Sil</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                        <a href="/Category/CreateCategory" class="btn btn-secondary">Yeni Kategori Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,4 +1,5 @@
 using KlassyCafe.DAL.Context;
+using KlassyCafe.Services.CategoryServices;
 using KlassyCafe.Services.SliderServices;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddEntityFrameworkNpgsql().AddDbContext<CafeContext>(opt =>
 {

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using KlassyCafe.DAL.Entities;
+using KlassyCafe.Dtos.CategoryDtos;
 using KlassyCafe.Dtos.SliderDtos;
 
 namespace KlassyCafe.Mapping
@@ -12,6 +13,11 @@ namespace KlassyCafe.Mapping
             CreateMap<Slider, UpdateSliderDto>().ReverseMap();
             CreateMap<Slider, CreateSliderDto>().ReverseMap();
             CreateMap<Slider, GetSliderByIdDto>().ReverseMap();
+
+            CreateMap<Category, ResultCategoryDto>().ReverseMap();
+            CreateMap<Category, UpdateCategoryDto>().ReverseMap();
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Category, GetCategoryByIdDto>().ReverseMap();
         }
     }
 }

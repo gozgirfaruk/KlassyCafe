@@ -11,5 +11,6 @@ namespace KlassyCafe.Services.SliderServices
         Task CreateSliderAsync(CreateSliderDto createSliderDto);
         Task ChangeStatusToTrue(int id);
         Task ChangeStatusToFalse(int id);
+        Task<List<ResultSliderDto>> GetTrueSliderAsync();
     }
 }

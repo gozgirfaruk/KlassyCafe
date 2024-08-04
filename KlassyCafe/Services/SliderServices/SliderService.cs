@@ -60,6 +60,12 @@ namespace KlassyCafe.Services.SliderServices
             return _mapper.Map<List<ResultSliderDto>>(values);
         }
 
+        public async Task<List<ResultSliderDto>> GetTrueSliderAsync()
+        {
+            var values = await _context.Sliders.Where(x=>x.Status==true).ToListAsync();
+            return _mapper.Map<List<ResultSliderDto>>(values);
+        }
+
         public async Task UpdateSliderAsync(UpdateSliderDto updateSliderDto)
         {
             var values = _mapper.Map<Slider>(updateSliderDto);
