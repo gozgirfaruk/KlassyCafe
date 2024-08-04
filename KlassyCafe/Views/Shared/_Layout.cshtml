@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+    @await Html.PartialAsync("/Views/Shared/_UILayoutPartial/_HeadPartial.cshtml")
+    
+    <body>
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+   
+    @await Html.PartialAsync("/Views/Shared/_UILayoutPartial/_NavbarPartial.cshtml")
+
+    @RenderBody()
+  
+    @await Html.PartialAsync("/Views/Shared/_UILayoutPartial/_FooterPartial.cshtml")
+    
+    @await Html.PartialAsync("/Views/Shared/_UILayoutPartial/_ScriptPartial.cshtml")
+
+  </body>
+</html>
+
