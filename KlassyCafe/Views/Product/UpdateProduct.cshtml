@@ -1,0 +1,49 @@
+﻿@model GetProductByIdDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ürün Güncelleme Sayfası</h4>
+
+                    <div class="basic-form">
+                        <form method="post">
+                            <div class="form-group">
+                                <input type="hidden" asp-for="ProductId"/>
+                                <input type="text" class="form-control input-rounded" asp-for="Title" placeholder="Ürün Adı">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input-rounded" asp-for="Description" placeholder="Ürün Açıklama">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input-rounded" asp-for="ImageUrl" placeholder="Ürün Görsel Linki">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control input-rounded" asp-for="Price" placeholder="Ürün Fiyatı">
+                            </div>
+                            <div class="form-group">
+                                @*  <input type="number" class="form-control input-rounded" asp-for="CategoryId" placeholder="Kategori ID"> *@
+                                @Html.DropDownListFor(x => x.CategoryId, (SelectList)ViewBag.categories, "Kategori Seçiniz", new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="cars">Öne Çıkarılsın Mı?</label>
+
+                                <select asp-for="Feature" id="cars">
+                                    <option value="true">Evet</option>
+                                    <option value="false">Hayır</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-round">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
