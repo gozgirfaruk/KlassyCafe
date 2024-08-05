@@ -11,5 +11,7 @@ namespace KlassyCafe.Services.ProductServices
         Task<GetProductByIdDto> GetProductByIdAsync(int id);
         Task ChangeToTrue(int id);
         Task ChangeToFalse(int id);
+        Task<List<ResultProductPreviewDto>> GetAllProductPreiewAsync();
+        Task<List<ResultProductDto>>  GetProductWhileSelectCategory(int id);
     }
 }

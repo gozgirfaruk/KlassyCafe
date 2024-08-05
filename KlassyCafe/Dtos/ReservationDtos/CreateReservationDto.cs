@@ -1,8 +1,7 @@
-﻿namespace KlassyCafe.DAL.Entities
+﻿namespace KlassyCafe.Dtos.ReservationDtos
 {
-    public class Reservation
+    public class CreateReservationDto
     {
-        public int ReservationId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }

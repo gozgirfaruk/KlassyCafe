@@ -53,10 +53,22 @@ namespace KlassyCafe.Services.ProductServices
             return _mapper.Map<List<ResultProductDto>>(values);
         }
 
+        public async Task<List<ResultProductPreviewDto>> GetAllProductPreiewAsync()
+        {
+            var valeus = await _context.Products.ToListAsync();
+            return _mapper.Map<List<ResultProductPreviewDto>>(valeus);
+        }
+
         public async Task<GetProductByIdDto> GetProductByIdAsync(int id)
         {
             var values = await _context.Products.FindAsync(id);
             return _mapper.Map<GetProductByIdDto>(values);
+        }
+
+        public async Task<List<ResultProductDto>> GetProductWhileSelectCategory(int id)
+        {
+            var values = await _context.Products.Where(x=>x.CategoryId==id).ToListAsync();
+            return _mapper.Map<List<ResultProductDto>>(values);
         }
 
         public async Task UpdateProductAsync(UpdateProductDto updateProductDto)
@@ -65,5 +77,6 @@ namespace KlassyCafe.Services.ProductServices
             _context.Products.Update(values);
             await _context.SaveChangesAsync();
         }
+        
     }
 }

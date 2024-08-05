@@ -3,6 +3,7 @@ using System;
 using KlassyCafe.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace KlassyCafe.Migrations
 {
     [DbContext(typeof(CafeContext))]
-    partial class CafeContextModelSnapshot : ModelSnapshot
+    [Migration("20240805141124_mig_ReviseReservation")]
+    partial class mig_ReviseReservation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

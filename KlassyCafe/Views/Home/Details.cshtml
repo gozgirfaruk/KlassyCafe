@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,4 +14,5 @@
 
 @await Component.InvokeAsync("_UIReservationComponentPartial")
 
-@* @await Component.InvokeAsync("_UIMenuCategoryComponentPartial") *@
+@await Component.InvokeAsync("_UIMenuCategoryComponentPartial",new {id=ViewBag.Id})
+

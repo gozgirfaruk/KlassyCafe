@@ -2,6 +2,7 @@
 using KlassyCafe.DAL.Entities;
 using KlassyCafe.Dtos.CategoryDtos;
 using KlassyCafe.Dtos.ProductDtos;
+using KlassyCafe.Dtos.ReservationDtos;
 using KlassyCafe.Dtos.SliderDtos;
 
 namespace KlassyCafe.Mapping
@@ -24,6 +25,12 @@ namespace KlassyCafe.Mapping
             CreateMap<Product, UpdateProductDto>().ReverseMap();
             CreateMap<Product, GetProductByIdDto>().ReverseMap();
             CreateMap<Product, CreateProductDto>().ReverseMap();
+            CreateMap<Product, ResultProductPreviewDto>().ReverseMap();
+
+            CreateMap<Reservation, ResultReservationDto>().ReverseMap();
+            CreateMap<Reservation, UpdateReservationDto>().ReverseMap();
+            CreateMap<Reservation, CreateReservationDto>().ReverseMap();
+            CreateMap<Reservation, GetReservationByIdDto>().ReverseMap();
         }
     }
 }
